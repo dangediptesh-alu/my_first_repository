@@ -75,10 +75,28 @@
   </div>
 
   <!-- Happy Birthday Song (royalty free instrumental) -->
-  <audio controls autoplay>
-  <source src="happy-birthday-357371.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
+  <!-- Hidden audio -->
+<audio id="birthdaySong" preload="auto">
+  <source src="https://raw.githubusercontent.com/your-username/your-repo/main/happy-birthday.mp3" type="audio/mpeg">
 </audio>
+
+<!-- Button -->
+<button id="revealButton">Click here to see 🎁</button>
+
+<script>
+  const button = document.getElementById("revealButton");
+  const song = document.getElementById("birthdaySong");
+
+  button.addEventListener("click", () => {
+    // Play the birthday song
+    song.play()
+      .catch(err => console.log("Autoplay blocked:", err));
+    
+    // Reveal your surprise section here
+    document.querySelector(".hidden-surprise").style.display = "block";
+  });
+</script>
+
 
   <script>
     const enterBtn=document.getElementById('enterBtn');
@@ -156,4 +174,5 @@
   </script>
 </body>
 </html>
+
 
